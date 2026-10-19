@@ -1,0 +1,8 @@
+name = "mahmood-sahebi-portfolio"
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "PORTFOLIO_DB"
+database_name = "mahmood-portfolio-content"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+migrations_dir = "migrations"
