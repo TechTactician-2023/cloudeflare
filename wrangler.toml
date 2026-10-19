@@ -1,4 +1,14 @@
+
+name = "cloudeflare"
+compatibility_date = "2026-10-19"
+
 [assets]
 directory = "./dist"
 html_handling = "none"
 not_found_handling = "404-page"
+
+[[d1_databases]]
+binding = "PORTFOLIO_DB"
+database_name = "mahmood-portfolio-content"
+database_id = "b8fe5a59-9dbd-4ce8-a39b-ee2272375a68"
+migrations_dir = "migrations"
