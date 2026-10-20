@@ -1,0 +1,16 @@
+
+name = "cloudeflare"
+main = "./src/index.js"
+compatibility_date = "2026-10-19"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+run_worker_first = ["/api/*"]
+html_handling = "auto-trailing-slash"
+not_found_handling = "404-page"
+
+[[d1_databases]]
+binding = "PORTFOLIO_DB"
+database_name = "mahmood-portfolio-content"
+database_id = "b8fe5a59-9dbd-4ce8-a39b-ee2272375a68"
