@@ -93,7 +93,11 @@ async function handleApi(request, env) {
   const url = new URL(request.url);
   const path = url.pathname;
   const method = request.method;
-
+console.log("Configuration check:", {
+  hasDatabase: !!env.PORTFOLIO_DB,
+  hasAdminPassword: !!env.ADMIN_PASSWORD,
+  hasTokenSecret: !!env.ADMIN_TOKEN_SECRET
+});
   if (!env.PORTFOLIO_DB || !env.ADMIN_PASSWORD || !env.ADMIN_TOKEN_SECRET) {
     return json({ error: "Server configuration is incomplete." }, 500);
   }
