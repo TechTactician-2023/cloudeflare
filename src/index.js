@@ -208,10 +208,15 @@ export default {
         return json({ error: "Method not allowed." }, 405);
       }
 
-      try {
+            try {
         return await handleApi(request, env);
-      } catch {
-        return json({ error: "Internal server error." }, 500);
+      } catch (error) {
+        console.error("API error:", error);
+
+        return json({
+          error: "Internal server error.",
+          requestId: crypto.randomUUID()
+        }, 500);
       }
     }
 
