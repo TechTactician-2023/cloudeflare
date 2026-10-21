@@ -1,0 +1,16 @@
+{
+  "name": "mahmood-sahebi-portfolio",
+  "private": true,
+  "version": "1.1.0",
+  "description": "Static portfolio and admin CMS on Cloudflare Workers Assets and D1",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:migrate:local": "wrangler d1 migrations apply mahmood-portfolio-content --local",
+    "db:migrate:remote": "wrangler d1 migrations apply mahmood-portfolio-content --remote"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  },
+  "type": "module"
+}
