@@ -1,0 +1,25 @@
+{
+  "name": "mahmood-sahebi-portfolio",
+  "private": true,
+  "version": "1.3.0",
+  "description": "Portfolio CMS with D1-backed media library on Cloudflare Workers and D1",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:migrate:local": "wrangler d1 migrations apply mahmood-portfolio-content --local",
+    "db:migrate:remote": "wrangler d1 migrations apply mahmood-portfolio-content --remote",
+    "test:smoke": "node tests/smoke-test.mjs",
+    "test:translations": "node tests/translation-review.mjs && node tests/translation-quality-regression.mjs",
+    "test:review": "npm run test:syntax && node tests/smoke-test.mjs && node tests/frontend-review.mjs && npm run test:translations && npm run test:deployment",
+    "test:deployment": "node tests/deployment-review.mjs",
+    "deploy:dry": "wrangler deploy --dry-run --outdir .wrangler/dry-run",
+    "test:syntax": "node --check src/index.js && node --check dist/assets/js/app.js && node --check dist/assets/js/about-media.js && node --check dist/assets/js/cms-public.js && node --check dist/assets/js/admin.js && node --check dist/assets/js/protect.js"
+  },
+  "devDependencies": {
+    "wrangler": "4.152.0"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

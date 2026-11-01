@@ -1,0 +1,8 @@
+About page / landing-page fixes
+
+- index.html now contains the same complete About page as about.html, so the root URL no longer serves stale/older markup.
+- Updated cache-busting query versions for the affected CSS and JavaScript and no-cache headers for HTML pages.
+- Reduced video highlight card sizes (four across on wide screens, two on medium screens, one on phones).
+- Added readable, relevant captions for all four video slots.
+- Captions can be edited in the Admin panel and are stored with each video slot in the D1 settings JSON.
+- Existing image/video rendering and YouTube/Vimeo embed support remain in place.
