@@ -1,0 +1,36 @@
+name: Portfolio quality checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install pinned project dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Run syntax, API, frontend, translation, CSP, and deployment-config checks
+        run: npm run test:review
+
+      - name: Build Worker bundle without deploying to production
+        run: npm run deploy:dry
+
+      - name: Keep the dry-run bundle for inspection
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cloudflare-worker-dry-run
+          path: .wrangler/dry-run/
+          if-no-files-found: error
+          retention-days: 7
