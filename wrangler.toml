@@ -12,4 +12,3 @@ binding = "PORTFOLIO_DB"
 database_name = "mahmood-portfolio-content"
 database_id = "b8fe5a59-9dbd-4ce8-a39b-ee2272375a68"
 migrations_dir = "migrations"
-
