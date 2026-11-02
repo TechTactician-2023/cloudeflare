@@ -10,6 +10,6 @@ run_worker_first = ["/api/*", "/media/*", "/", "/index.html", "/about.html", "/c
 [[d1_databases]]
 binding = "PORTFOLIO_DB"
 database_name = "mahmood-portfolio-content"
-database_id = "b8fe5a59-9dbd-4ce8-a39b-ee2272375a68"
+database_id = "029c20bc1f6740a1aee4d6cd5a738e97"
 migrations_dir = "migrations"
 
