@@ -1,7 +1,0 @@
-Content protection (best-effort deterrents)
-
-All public pages and the admin page now enable the protection CSS directly in the HTML and load the shared protect.js script. The CSS class prevents casual text selection immediately; the script blocks common context-menu, copy/cut, save, print, source-view, and some screenshot-key shortcuts where the browser delivers those events to the page. Editable form fields remain usable.
-
-Important limitation: this is not DRM or a security boundary. A website cannot reliably disable OS-level screenshots, browser developer tools, external capture utilities/cameras, or saving resources already delivered to the device. These controls only deter casual copying.
-
-Deployment: publish the complete project with dist/ as the configured Cloudflare asset directory. After deployment, hard-refresh or clear the site's cache if a browser still shows an older version.
