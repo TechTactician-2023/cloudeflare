@@ -1,0 +1,8 @@
+Project page image mapping
+
+- project-network-automation.jpg: Multi-site network automation
+- project-monitoring-workflow.jpg: Network monitoring workflow (full illustration kept visible)
+- project-wireless-service-support.jpg: Wireless service support
+
+Images are stored in dist/assets/images and are referenced locally by dist/projects.html.
+The project media frame uses a shared 16:9 ratio; the near-square workflow illustration uses contain sizing to avoid cropping.
